@@ -1,0 +1,95 @@
+<p style="font-size: large">
+  Powered by ⚡ <a href="https://guardicore.com/" style="color: white"><strong>Guardicore</strong></a>
+</p>
+
+<p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+<style>
+  /* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 12px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 11px;
+  width: 11px;
+  left: 2px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #ffcc00;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #ffcc00;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 13px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
+
+<script>
+  function colorblindModeToggle() {
+    var body = document.getElementById("body");
+    var sidebar = document.getElementById("sidebar");
+    console.log("in colorblind toggle");
+    if (sidebar.style.filter == "grayscale(100%)") {
+      console.log("In colorblind mode, reverting to normal mode");
+      sidebar.style.filter = "grayscale(0%)";
+      body.style.filter = "grayscale(0%)";
+    } else {
+      console.log("Not in colorblind mode, turning it on");
+      sidebar.style.filter = "grayscale(100%)";
+      body.style.filter = "grayscale(100%)";
+    }
+  }
+</script>
+
+<div id="colorblind-mode" style="width: 90%; display: flex; margin-top: 5px;">
+  <label class="switch">
+    <input id="colorblind-mode-selector" type="checkbox" onclick="colorblindModeToggle()">
+    <span class="slider round"></span>
+  </label>
+  <p>&nbsp;Colorblind mode</p>
+</div>
